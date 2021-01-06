@@ -1,0 +1,21 @@
+<body>
+    <nav>
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('logout') }}">Sair</a>
+        {% else %}
+            <a href="{{ url_for('register') }}">Cadastrar</a>
+            <a href="{{ url_for('login') }}">Login</a>
+        {% endif %}
+    </nav>
+
+
+    <ul>
+        {% for user in users %}
+
+            <li> <a href={{ url_for('unique', id=user.id) }}>{{  user.name }}</a> </li>
+            
+        {% endfor %}
+    </ul>
+
+
+</body>
