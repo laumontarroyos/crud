@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block subtitulo %} Usuários {% endblock %}
+
+{% from 'components/usuario.html' import user_component %}
+
+{% block conteudo %}
+        
+        {% include 'components/notification.html' %}
+
+        {{ user_component(users) }}
+        
+
+{% endblock %}
+
+# margin-bottom-5
+   
